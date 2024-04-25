@@ -15,7 +15,7 @@ tab1, tab2, tab3, tab4 = st.tabs(["Modelo básico",
 
 with tab1:
     st.header("Modelo básico")
-    model = read_model("/yamls/model.yaml")
+    model = read_model("./yamls/model.yaml")
     # ecuaciones de equilibrio
 
     var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
