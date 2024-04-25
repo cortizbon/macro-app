@@ -12,10 +12,12 @@ def plot_results(num_simuls, model, x):
 
     num_rows = int(np.ceil(len(model['variables']) / 3))
 
-    fig, axs = plt.subplots(num_rows, 3, figsize=(10, 4))
+    fig, axs = plt.subplots(num_rows, 3, figsize=(8, 4))
     for i, v in enumerate(model['variables']):
         axs.flatten()[i].plot(x[:num_simuls, model['variables'].index(v)])
         axs.flatten()[i].set_xlabel(v)
+        axs.flatten()[i].spines['top'].set_visible(False)
+        axs.flatten()[i].spines['right'].set_visible(False)
     
     return fig
 

@@ -5,6 +5,7 @@ import econpizza as ep
 
 from utils import read_model, test_shock, plot_results
 
+st.set_page_config(layout='wide')
 
 st.title("Modelos de macro avanzada")
 
@@ -33,10 +34,65 @@ with tab1:
 
 with tab2:
     st.header("Modelo RBC")
-    pass
+    model = read_model("./yamls/RBC.yaml")
+    # ecuaciones de equilibrio
+
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+
+    _ = model.solve_stst()
+    # schock
+
+    x = test_shock(var_shock, model)
+
+    # ingreso de parámetros para análisis de estabilidad
+    # obtener resultados
+    fig = plot_results(50, model, x)
+    st.pyplot(fig)    
 with tab3:
     st.header("MIU")
-    pass
+    model = read_model("./yamls/miu.yaml")
+    # ecuaciones de equilibrio
+
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+
+    _ = model.solve_stst()
+    # schock
+
+    x = test_shock(var_shock, model)
+
+    # ingreso de parámetros para análisis de estabilidad
+    # obtener resultados
+    fig = plot_results(50, model, x)
+    st.pyplot(fig)
 with tab4:
     st.header("NeoKeynesian")
-    pass
+    st.subheader("Taylor")
+    model = read_model("./yamls/taylor_.yaml")
+    # ecuaciones de equilibrio
+
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+
+    _ = model.solve_stst()
+    # schock
+
+    x = test_shock(var_shock, model)
+
+    # ingreso de parámetros para análisis de estabilidad
+    # obtener resultados
+    fig = plot_results(50, model, x)
+    st.pyplot(fig) 
+    st.subheader("Optimal")
+    model = read_model("./yamls/optimal.yaml")
+    # ecuaciones de equilibrio
+
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+
+    _ = model.solve_stst()
+    # schock
+
+    x = test_shock(var_shock, model)
+
+    # ingreso de parámetros para análisis de estabilidad
+    # obtener resultados
+    fig = plot_results(50, model, x)
+    st.pyplot(fig)
