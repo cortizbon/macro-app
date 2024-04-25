@@ -19,6 +19,7 @@ def plot_results(num_simuls, model, x):
         axs.flatten()[i].spines['top'].set_visible(False)
         axs.flatten()[i].spines['right'].set_visible(False)
     
+    fig.tight_layout()
     return fig
 
 def read_model(yaml_name: str):
