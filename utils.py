@@ -14,7 +14,7 @@ def plot_results(num_simuls, model, x):
 
     fig, axs = plt.subplots(num_rows, 3, figsize=(10, 4))
     for i, v in enumerate(model['variables']):
-        axs.flatten()[i].plot(x[:num_simuls, model['variables']])
+        axs.flatten()[i].plot(x[:num_simuls, model['variables'].index(v)])
         axs.flatten()[i].set_xlabel(v)
     
     return fig
