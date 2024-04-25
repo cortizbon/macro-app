@@ -38,7 +38,7 @@ def sensitivity_analysis(val, param, var_shock, model, num_simuls=50):
     fig, axs = plt.subplots(num_rows, 3, figsize=(8, 4))
     for elem in val:
         model['steady_state']['fixed_values'][param] = elem
-        _ = model.find_stst()
+        _ = model.solve_stst()
         shk = (var_shock, 0.01 ** 2)
         x, flag = model.find_path(shock=shk)
         
