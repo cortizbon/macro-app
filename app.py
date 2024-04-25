@@ -6,7 +6,7 @@ import econpizza as ep
 from utils import read_model, test_shock, plot_results
 
 
-st.streamlit("Modelos de macro avanzada")
+st.title("Modelos de macro avanzada")
 
 tab1, tab2, tab3, tab4 = st.tabs(["Modelo básico",
                                   "RBC",
@@ -28,7 +28,7 @@ with tab1:
     # ingreso de parámetros para análisis de estabilidad
     # obtener resultados
     plot_results(50, model, x)
-    pass
+    
 
 with tab2:
     st.header("Modelo RBC")
