@@ -37,7 +37,7 @@ with tab2:
     model = read_model("./yamls/RBC.yaml")
     # ecuaciones de equilibrio
 
-    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks, key=1)
 
     _ = model.solve_stst()
     # schock
@@ -53,7 +53,7 @@ with tab3:
     model = read_model("./yamls/miu.yaml")
     # ecuaciones de equilibrio
 
-    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks, key=2)
 
     _ = model.solve_stst()
     # schock
@@ -70,7 +70,7 @@ with tab4:
     model = read_model("./yamls/taylor_.yaml")
     # ecuaciones de equilibrio
 
-    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks, key=3)
 
     _ = model.solve_stst()
     # schock
@@ -85,7 +85,7 @@ with tab4:
     model = read_model("./yamls/optimal.yaml")
     # ecuaciones de equilibrio
 
-    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks)
+    var_shock = st.selectbox("Seleccione el shock a evaluar: ", model.shocks, key=4)
 
     _ = model.solve_stst()
     # schock
