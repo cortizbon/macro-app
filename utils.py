@@ -10,7 +10,7 @@ def test_shock(var_shock, model):
 
 def plot_results(num_simuls, model, x):
 
-    num_rows = np.ceil(len(model['variables']) / 3)
+    num_rows = int(np.ceil(len(model['variables']) / 3))
 
     fig, axs = plt.subplots(num_rows, 3, figsize=(10, 4))
     for i, v in enumerate(()):
