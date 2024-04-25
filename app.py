@@ -48,20 +48,7 @@ with tab2:
     # obtener resultados
     fig = plot_results(50, model, x)
     st.pyplot(fig)
-    st.subheader("Análisis de sensibilidad")
-    st.write("Haga clic en uno de los botones para realizar análisis de sensibilidad sobre alguno de los siguientes parámetros")
-    if st.button("Consumo (sigma)"):
-        #list_sigmas = eval(st.text_input("Ingrese valores para el parámetro sigma ([3, 4, 2]): "))
-        #check_if_list(list_sigmas)
-        list_sigmas = [0.1, 0.5, 3]
-        fig = sensitivity_analysis(list_sigmas, "sigma", var_shock, model)
-        st.pyplot(fig)
-    if st.button("Oferta laboral (gamma)"):
-        list_gammas = eval(st.text_input("Ingrese valores para el parámetro gamma ([3, 4, 2]): "))
-        if list_gammas:
-            check_if_list(list_gammas)
-            fig = sensitivity_analysis(list_gammas, "gamma", var_shock, model)
-            st.pyplot(fig)
+    
 
         
 with tab3:
