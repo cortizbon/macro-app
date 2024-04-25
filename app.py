@@ -52,8 +52,8 @@ with tab2:
     st.write("Haga clic en uno de los botones para realizar análisis de sensibilidad sobre alguno de los siguientes parámetros")
     if st.button("Consumo (sigma)"):
         list_sigmas = eval(st.text_input("Ingrese valores para el parámetro sigma ([3, 4, 2]): "))
-        if list_sigmas:
-            check_if_list(list_sigmas)
+        check_if_list(list_sigmas)
+        if st.button("Realizar análisis"):
             fig = sensitivity_analysis(list_sigmas, "sigma", var_shock, model)
             st.pyplot(fig)
     if st.button("Oferta laboral (gamma)"):
