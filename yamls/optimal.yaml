@@ -1,0 +1,27 @@
+variables: [x, pi, i, g, miu]
+
+shocks: [eg, emiu]
+
+parameters: [phi, lamda, beta, alpha, rhou, rhog]
+
+definitions: |
+  from jax.numpy import log, maximum
+
+equations:
+  ~ g = rhog * gLag + eg
+  ~ miu = rhou * miuLag + emiu
+  ~ x = (-lamda * miu)/ (lamda ** 2 + alpha * (1 - beta * rhou))
+  ~ pi = (beta * miu)/ (lamda ** 2 + alpha * (1 - beta * rhou))
+  ~ i = (1 + lamda * (1 - rhou)/ (rhou * phi * alpha)) * alpha * rhou * miu / (lamda ** 2 + alpha * (1 - beta * rhou)) + 1 / phi * g
+steady_state:
+  fixed_values:
+    phi: 0.25
+    lamda: 0.2
+    beta: 0.98
+    alpha: 0.5
+    rhou: 0.9
+    rhog: 0.9
+  init_guesses:
+    x: 0.1
+    pi: 0.1 
+    i: 0.1
