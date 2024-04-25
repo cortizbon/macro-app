@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import econpizza as ep
 
-from utils import read_model, test_shock, plot_results
+from utils import read_model, test_shock, plot_results, check_if_list, sensitivity_analysis
 
 st.set_page_config(layout='wide')
 
@@ -47,7 +47,21 @@ with tab2:
     # ingreso de parámetros para análisis de estabilidad
     # obtener resultados
     fig = plot_results(50, model, x)
-    st.pyplot(fig)    
+    st.pyplot(fig)
+    st.subheader("Análisis de sensibilidad")
+    st.write("Haga clic en uno de los botones para realizar análisis de sensibilidad sobre alguno de los siguientes parámetros")
+    if st.button("Consumo (sigma)"):
+        list_sigmas = eval(st.text_input("Ingrese valores para el parámetro sigma ([3, 4, 2]): "))
+        check_if_list(list_sigmas)
+        fig = sensitivity_analysis(list_sigmas, "sigma", var_shock, model)
+        st.pyplot(fig)
+    if st.button("Oferta laboral (gamma)"):
+        list_gammas = eval(st.text_input("Ingrese valores para el parámetro gamma ([3, 4, 2]): "))
+        check_if_list(list_gammas)
+        fig = sensitivity_analysis(list_sigmas, "gamma", var_shock, model)
+        st.pyplot(fig)
+
+        
 with tab3:
     st.header("MIU")
     model = read_model("./yamls/miu.yaml")

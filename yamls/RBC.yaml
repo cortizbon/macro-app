@@ -30,4 +30,4 @@ steady_state:
     ynbar: abar * ((1 / beta - 1+delta)/((1-alpha)*abar))**(-(1-alpha)/alpha)
     ckbar:   (((1/beta)-1+delta)/(1-alpha))-delta
   init_guesses:
-    k: 0.95
+    k: 0.01
