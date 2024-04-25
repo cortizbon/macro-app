@@ -27,8 +27,9 @@ with tab1:
 
     # ingreso de parámetros para análisis de estabilidad
     # obtener resultados
-    plot_results(50, model, x)
-    
+    fig = plot_results(50, model, x)
+    st.pyplot(fig)
+
 
 with tab2:
     st.header("Modelo RBC")

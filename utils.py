@@ -17,7 +17,7 @@ def plot_results(num_simuls, model, x):
         axs.flatten()[i].plot(x[:num_simuls, model['variables']])
         axs.flatten()[i].set_xlabel(v)
     
-    plt.show()
+    return fig
 
 def read_model(yaml_name: str):
     model = ep.load(yaml_name,
