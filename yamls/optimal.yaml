@@ -10,7 +10,7 @@ definitions: |
 equations:
   ~ g = rhog * gLag + eg
   ~ miu = rhou * miuLag + emiu
-  ~ x = (-lamda * miu)/ (lamda ** 2 + alpha * (1 - beta * rhou))
+  ~ x = (- lamda * miu)/ (lamda ** 2 + alpha * (1 - beta * rhou))
   ~ pi = (beta * miu)/ (lamda ** 2 + alpha * (1 - beta * rhou))
   ~ i = (1 + lamda * (1 - rhou)/ (rhou * phi * alpha)) * alpha * rhou * miu / (lamda ** 2 + alpha * (1 - beta * rhou)) + 1 / phi * g
 steady_state:
