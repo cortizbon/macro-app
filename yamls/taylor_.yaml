@@ -10,7 +10,7 @@ definitions: |
 equations:
   ~ g = rhog * gLag + eg
   ~ miu = rhou * miuLag + emiu
-  ~ x = -phi * (i - piLag) + xPrime + g
+  ~ x = - phi * (i - piLag) + xPrime + g
   ~ pi = lamda * x + beta * piPrime + miu
   ~ i = 1.5 * pi + 0.5 * x
 steady_state:
